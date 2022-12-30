@@ -6,8 +6,10 @@ import TextField from '@mui/material/TextField';
 import BackupIcon from '@mui/icons-material/Backup';
 import './AddTask.css'
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const AddTask = () => {
+    const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
     const imageHostKey = process.env.REACT_APP_imageHostKey
     const imageHostURL = `https://api.imgbb.com/1/upload?key=${imageHostKey}`
@@ -44,7 +46,7 @@ const AddTask = () => {
                 .then(data => {
                     toast.success('Task Added')
                     setLoading(false)
-                    console.log(data)
+                    navigate('/my-tasks')
                 })
             }
         })

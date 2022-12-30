@@ -13,9 +13,11 @@ import { toast } from 'react-hot-toast';
 import EditModal from './EditModal';
 import CommentModal from './CommentModal';
 import TaskModal from './TaskModal';
+import { useNavigate } from 'react-router-dom';
 
 const TaskCard = ({task, refetch}) => {
     const complete = task.isComplete
+    const navigate = useNavigate()
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -41,9 +43,11 @@ const TaskCard = ({task, refetch}) => {
         .then(data => {
             if(complete){
                 toast.success('Task marked as incomplete')
+                navigate('/my-tasks')
             }
             else{
                 toast.success('Task marked as complete')
+                navigate('/completed-tasks')
             }
             refetch()
         })
