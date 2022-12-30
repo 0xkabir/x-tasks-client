@@ -1,0 +1,16 @@
+/* .MuiToolbar-root{
+    margin-bottom: 56px;
+} */
+
+.MuiBox-root{
+    max-height: 56px;
+}
+
+@media(min-width: 600px){
+    .MuiBox-root{
+        max-height: 64px;
+    }
+    /* .MuiToolbar-root{
+        margin-bottom: 64px;
+    } */
+}

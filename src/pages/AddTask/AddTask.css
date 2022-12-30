@@ -1,0 +1,17 @@
+.taskform {
+    max-width: 680px;
+    margin: 0px auto;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.taskform button{
+    width: 50%;
+    margin-left: 25%;
+}
+
+@media(max-width: 767px){
+    .taskform{
+        padding: 10px;
+    }
+}
