@@ -77,11 +77,13 @@ const TaskCard = ({task, refetch}) => {
             <InfoIcon />
             </IconButton> 
           </Stack>
-          {complete?<Button variant="contained" color='warning' sx={{borderRadius: 5, mt: {xs: 2, sm: 0}}} onClick={()=>handleComplete(task._id)}>Incomplete</Button> :
-          <Stack direction="row" spacing={1} sx={{mt: {xs: 2, sm:0}}}>
+          {complete?<Stack direction="row" spacing={1} alignItems="center">
             <IconButton aria-label="comment" color='info' onClick={handleShow}>
             <CommentIcon />
-            </IconButton>    
+            </IconButton> 
+            <Button variant="contained" color='warning' sx={{borderRadius: 5, mt: {xs: 2, sm: 0}}} onClick={()=>handleComplete(task._id)}>Incomplete</Button>
+          </Stack> :
+          <Stack direction="row" spacing={1} sx={{mt: {xs: 2, sm:0}}}>   
             <IconButton aria-label="edit" color='warning' onClick={handleOpen}>
             <EditIcon />
             </IconButton>    
